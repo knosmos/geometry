@@ -8,6 +8,8 @@ let angle; // correct angle.
 
 let timeouts = []; // stores the timeouts that have been set, so they can be cleared on restart
 
+let seconds = 10; // how many seconds you have to answer the question
+
 let start;
 let intersect;
 
@@ -55,14 +57,14 @@ function setup(problem){
         else{
             car.style.transform = `translate(-50%, -50%) rotateZ(${car_angle+chosen_angle}deg)`;            
         }
-    },5000);
+    },seconds*1000);
 
     // Make car move forward after turning
     setTimeout(function(){
         car.style.left = `${intersect[0]/10 + 50 * Math.cos((car_angle+chosen_angle) * Math.PI / 180)}%`;
         car.style.top = `${intersect[1]/10 + 50 * Math.sin((car_angle+chosen_angle) * Math.PI / 180)}%`;
         car.style.opacity = 0;
-    },6000);
+    },seconds*1000+1000);
 
     // Check whether angle is correct after turning
     setTimeout(function(){
@@ -72,7 +74,7 @@ function setup(problem){
         else{
             lose();
         }
-    },10000);
+    },seconds*1000+4000);
 
     // Set options on street sign
     angle = problem.angle;
@@ -91,15 +93,14 @@ function setup(problem){
     document.getElementById("problem-name").innerHTML = problem.name;
 
     // enable car movement
-    setTimeout(function(){
-        car.style.transition = "5s top linear, 5s left linear, 1s transform, 5s opacity";
-    },100);
+    car.style.transition = `${seconds}s top linear, ${seconds}s left linear, 1s transform, 5s opacity`;
 }
 
 function setAngle(a){
     chosen_angle = a;
     document.getElementById("statement-blank").innerHTML = a;
     option_div.innerHTML = "";
+    document.getElementById("audio-place").play();
 }
 
 function lose(){
@@ -113,11 +114,15 @@ function lose(){
         document.getElementById("lose-modal-img").src = `assets/crash/${image}.png`;        
     }
     lost = true;
+    document.getElementById("audio-crash").play();
 }
 
 function win(){
     localStorage.setItem("geometry_current_level",currentLevel+1);
-    restart();
+    document.getElementById("audio-complete").play();
+    setTimeout(function(){
+        restart();
+    },1000);
 }
 
 function restart(){

@@ -7,13 +7,20 @@
             <link rel=icon href=assets/icon.png>
         </head>
         <body>
+            <!-- Problem title (placeholder used in case JS breaks) -->
             <div id=problem-name>Something Has Gone Terribly Wrong Street</div>
-            <div id=panes>    
+
+            <!-- Panes is a CSS grid that lets us place the map and street sign next to each other -->
+            <div id=panes>
+
+                <!-- Map elements -->
                 <div id=test-window>
                     <img id=problem-image>
                     <div id=intersection></div>
                     <img id=car src=assets/car.png>
-                </div>    
+                </div>
+
+                <!-- Street sign elements -->
                 <div id=problem-wrapper>
                     <div id=problem>
                         <div id=problem-statement>Turn next right by <div id=statement-blank>&nbsp;</div> degrees</div>
@@ -23,14 +30,28 @@
                     </div>                    
                 </div>                
             </div>
+
+            <!-- Modal that appears on lose condition -->
             <div id=lose-modal>
                 <img id=lose-modal-img></img>
                 <br>
                 <div class=modal-button onclick="restart()">RESTART</div>
             </div>
-            <div id=win-modal>
-                <div id=win-modal-img></div>
+
+            <!-- Audio files for the game -->
+            <div id=audio-files>
+                <audio hidden id=audio-complete>
+                    <source src="assets/sfx/complete.wav" type="audio/wav">
+                </audio>
+                <audio hidden id=audio-crash>
+                    <source src="assets/sfx/crash.wav" type="audio/wav">
+                </audio>
+                <audio hidden id=audio-place>
+                    <source src="assets/sfx/place.wav" type="audio/wav">
+                </audio>           
             </div>
+
+            <!-- Scripts -->
             <script src=problems.js></script>
             <script src=main.js></script>
         </body>

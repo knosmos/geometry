@@ -159,6 +159,7 @@ body{
     body{
         padding-left:10%;
         padding-right:10%;
+        overflow:auto;
     }
 }
 @media screen and (max-width:800px){
