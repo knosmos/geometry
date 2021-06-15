@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+            <title>Geometry Street</title>
+            <link rel=stylesheet href=style.css>
+            <link rel=icon href=assets/icon.png>
+        </head>
+        <body>
+            <div id=problem-name>Something Has Gone Terribly Wrong Street</div>
+            <div id=panes>    
+                <div id=test-window>
+                    <img id=problem-image>
+                    <div id=intersection></div>
+                    <img id=car src=assets/car.png>
+                </div>    
+                <div id=problem-wrapper>
+                    <div id=problem>
+                        <div id=problem-statement>Turn next right by <div id=statement-blank>&nbsp;</div> degrees</div>
+                        <hr>
+                        <div id=options>
+                        </div>
+                    </div>                    
+                </div>                
+            </div>
+            <div id=lose-modal>
+                <img id=lose-modal-img></img>
+                <br>
+                <div class=modal-button onclick="restart()">RESTART</div>
+            </div>
+            <div id=win-modal>
+                <div id=win-modal-img></div>
+            </div>
+            <script src=problems.js></script>
+            <script src=main.js></script>
+        </body>
+    </head>
+</html>
