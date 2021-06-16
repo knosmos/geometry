@@ -13,6 +13,7 @@ function next(){
     else{
         window.location.href = "main.html";
     }
+    document.getElementById("audio-place").play();
 }
 
 display();

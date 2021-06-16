@@ -5,12 +5,23 @@
             <title>Geometry Street</title>
             <link rel=stylesheet href=style.css>
             <link rel=icon href=assets/icon.png>
+
+            <meta charset="UTF-8">
+            <meta name="description" content="A road navigation geometry game">
+            <meta name="keywords" content="geometry, game">
+            <meta name="author" content="Jieruei Chang">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </head>
         <body>
             <div id=intro-modal>
                 <img id=intro-modal-img></img>
                 <br>
                 <div class=modal-button onclick="next()">NEXT</div>
+            </div>
+            <div id=audio-files>
+                <audio hidden id=audio-place>
+                    <source src="assets/sfx/place.wav" type="audio/wav">
+                </audio>           
             </div>
             <script src=intro.js></script>
         </body>

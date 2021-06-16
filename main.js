@@ -1,3 +1,9 @@
+/*
+GEOMETRY STREET
+
+Author: Jieruei Chang
+*/
+
 let car = document.getElementById("car");
 let img = document.getElementById("problem-image");
 let option_div = document.getElementById("options");
@@ -75,9 +81,15 @@ function setup(problem){
             else{
                 localStorage.setItem("geometry_current_level",currentLevel+1);
                 document.getElementById("audio-complete").play();
+                // If win entire game, redirect to final.html; otherwise restart loads next level
                 setTimeout(function(){
-                    restart();
-                },1000);        
+                    if (currentLevel > problems.length){
+                        window.location.href="final.html";
+                    }
+                    else{
+                        restart();
+                    }
+                },1000);
             }
         }
         else{

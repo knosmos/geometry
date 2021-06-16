@@ -40,6 +40,38 @@ let problems = [
         "choices": [110,70,50]
     },
     {
+        "name": "Side-angle Road",
+        "car": [13,586],
+        "intersect": [400,586],
+        "img": "sas.png",
+        "angle": 50,
+        "choices": [50,340,40,52]
+    },
+    {
+        "name": "Asa Avenue",
+        "car": [42,436],
+        "intersect": [441,436],
+        "img": "asa.png",
+        "angle": 100,
+        "choices": [50,110,100,80]
+    },
+    {
+        "name": "🐍",
+        "car": [11,354],
+        "intersect": [382,354],
+        "img": "sss.png",
+        "angle": 42,
+        "choices": [40,138,42,50]
+    },
+    {
+        "name": "Two Angles Boulevard",
+        "car": [14,491],
+        "intersect": [403,491],
+        "img": "aas.png",
+        "angle": 55,
+        "choices": [45,125,150,55]
+    },
+    {
         "name": "Secant Circle",
         "car": [182,400],
         "intersect": [500,400],
@@ -62,5 +94,13 @@ let problems = [
         "img": "circleintersection.png",
         "angle": 60,
         "choices": [60,105,72]
+    },
+    {
+        "name": "Two Tangent Court",
+        "car": [0,470],
+        "intersect": [321,382],
+        "img": "twotangent.png",
+        "angle": 60,
+        "choices": [50,55,60,65,70]
     }
 ]
