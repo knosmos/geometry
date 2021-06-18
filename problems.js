@@ -48,7 +48,7 @@ let problems = [
         "choices": [50,340,40,52]
     },
     {
-        "name": "Asa Avenue",
+        "name": "AAS Avenue",
         "car": [42,436],
         "intersect": [441,436],
         "img": "asa.png",
